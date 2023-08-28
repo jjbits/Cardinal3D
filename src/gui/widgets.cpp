@@ -11,7 +11,8 @@
 #include "widgets.h"
 
 #include "../geometry/util.h"
-#include "../platform/platform.h"
+//#include "../platform/platform.h"
+#include "../platform/platform_vulkan.h"
 #include "../scene/renderer.h"
 
 namespace Gui {
@@ -687,7 +688,7 @@ void Widget_Render::animate(Scene& scene, Widget_Camera& cam, Camera& user_cam, 
         char* path = nullptr;
         NFD_OpenDirectoryDialog(nullptr, nullptr, &path);
         if(path) {
-            Platform::strcpy(output_path, path, sizeof(output_path));
+            PlatformVulkan::strcpy(output_path, path, sizeof(output_path));
             free(path);
         }
     }
@@ -859,7 +860,7 @@ std::string Widget_Render::headless(Animate& animate, Scene& scene, const Camera
     auto print_progress = [](float f) {
         std::cout << "Progress: [";
 
-        int width = std::min(Platform::console_width() - 30, 50);
+        int width = std::min(PlatformVulkan::console_width() - 30, 50);
         if(width) {
             int bar = (int)(width * f);
             for(int i = 0; i < bar; i++) std::cout << "-";

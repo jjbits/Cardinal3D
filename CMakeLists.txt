@@ -63,9 +63,9 @@ set(SOURCES_CARDINAL3D_UTIL
                     "src/util/rand.cpp")
 set(SOURCES_CARDINAL3D_PLATFORM
                     "src/platform/gl.cpp"
-                    "src/platform/platform.cpp"
+                    "src/platform/platform_vulkan.cpp"
                     "src/platform/gl.h"
-                    "src/platform/platform.h"
+                    "src/platform/platform_vulkan.h"
                     "deps/imgui/imgui_impl_opengl3.cpp"
                     "deps/imgui/imgui_impl_opengl3.h"
                     "deps/imgui/imgui_impl_sdl.cpp"

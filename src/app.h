@@ -12,7 +12,7 @@
 #include "scene/scene.h"
 #include "scene/undo.h"
 
-class Platform;
+class PlatformVulkan;
 
 class App {
 public:
@@ -34,7 +34,7 @@ public:
         bool w_from_ar = false;
     };
 
-    App(Settings set, Platform* plt = nullptr);
+    App(Settings set, PlatformVulkan* plt = nullptr);
     ~App();
 
     void render();
@@ -54,7 +54,7 @@ private:
     Mat4 view, proj, iviewproj;
 
     // Systems
-    Platform* plt = nullptr;
+    PlatformVulkan* plt = nullptr;
     Scene scene;
     Gui::Manager gui;
     Undo undo;

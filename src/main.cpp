@@ -1,5 +1,6 @@
 
-#include "platform/platform.h"
+//#include "platform/platform.h"
+#include "platform/platform_vulkan.h"
 #include "util/rand.h"
 #include <sf_libs/CLI11.hpp>
 
@@ -27,7 +28,7 @@ int main(int argc, char** argv) {
     CLI11_PARSE(args, argc, argv);
 
     if(!settings.headless) {
-        Platform plt;
+        PlatformVulkan plt;
         App app(settings, &plt);
         plt.loop(app);
     } else {

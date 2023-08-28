@@ -5,10 +5,11 @@
 
 #include "app.h"
 #include "geometry/util.h"
-#include "platform/platform.h"
+//#include "platform/platform.h"
+#include "platform/platform_vulkan.h"
 #include "scene/renderer.h"
 
-App::App(Settings set, Platform* plt)
+App::App(Settings set, PlatformVulkan* plt)
     : window_dim(plt ? plt->window_draw() : Vec2{1.0f}),
       camera(plt ? plt->window_draw() : Vec2{1.0f}), plt(plt), scene(Gui::n_Widget_IDs),
       gui(scene, plt ? plt->window_size() : Vec2{1.0f}), undo(scene, gui) {
